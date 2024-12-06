@@ -4,6 +4,7 @@ import '../../features/gamemodes/ui/gamemodes_screen.dart';
 import '../../features/heroes/ui/heroes_screen.dart';
 import '../../features/maps/ui/maps_screen.dart';
 import '../../features/players/ui/players_screen.dart';
+import '../../shared/ui/widgets/language_selector.dart';
 
 class MainNavigation extends StatelessWidget {
   const MainNavigation({super.key});
@@ -14,7 +15,8 @@ class MainNavigation extends StatelessWidget {
       length: 4,
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Overwatch Info'),
+          title: const Text('OverFast'),
+          actions: const [LanguageSelector()],
           bottom: const TabBar(
             tabs: [
               Tab(text: 'Heroes'),
