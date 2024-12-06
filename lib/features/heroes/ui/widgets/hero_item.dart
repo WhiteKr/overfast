@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../model/hero.dart' as hero_model;
 
@@ -12,6 +13,8 @@ class HeroItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+
     return ListTile(
       leading: Image.network(
         hero.portrait,
@@ -20,7 +23,7 @@ class HeroItem extends StatelessWidget {
         fit: BoxFit.cover,
       ),
       title: Text(hero.name),
-      subtitle: Text('Role: ${hero.role.name}'),
+      subtitle: Text('${l10n.role}: ${hero.role.name}'),
     );
   }
 }

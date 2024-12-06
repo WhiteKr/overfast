@@ -16,8 +16,6 @@ class HeroesRepository {
     final state = context.read<LanguageBloc>().state;
     final languageCode = state is LanguageLoaded ? state.languageCode : 'en-us';
 
-    print('Fetching heroes with language: $languageCode'); // For debugging
-
     final response = await http.get(
       Uri.parse('${EnvConfig.apiUrl}/heroes').replace(
         queryParameters: {

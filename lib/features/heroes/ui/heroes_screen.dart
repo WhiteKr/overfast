@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../../shared/bloc/language_bloc.dart';
 import '../bloc/heroes_bloc.dart';
@@ -12,6 +13,8 @@ class HeroesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+
     return BlocProvider(
       create: (context) => HeroesBloc(
         HeroesRepository(context),
@@ -29,7 +32,7 @@ class HeroesScreen extends StatelessWidget {
                 return const Center(child: CircularProgressIndicator());
               }
               if (state is HeroesError) {
-                return Center(child: Text('Error: ${state.message}'));
+                return Center(child: Text(l10n.error(state.message)));
               }
               if (state is HeroesLoaded) {
                 return ListView.builder(
@@ -40,7 +43,7 @@ class HeroesScreen extends StatelessWidget {
                   },
                 );
               }
-              return const Center(child: Text('No heroes found'));
+              return Center(child: Text(l10n.noHeroesFound));
             },
           );
         },

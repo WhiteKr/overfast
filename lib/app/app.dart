@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:overfast/app/navigation/main_navigation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../shared/bloc/language_bloc.dart';
 import '../shared/data/language_repository.dart';
-import '../shared/model/language.dart';
 
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
@@ -38,9 +38,11 @@ class MainApp extends StatelessWidget {
                 debugShowCheckedModeBanner: false,
                 title: 'OverFast',
                 locale: locale,
-                supportedLocales: Language.supportedLanguages
-                    .map((lang) => _localeFromString(lang.code)),
+                // supportedLocales: Language.supportedLanguages
+                //     .map((lang) => _localeFromString(lang.code)),
+                supportedLocales: AppLocalizations.supportedLocales,
                 localizationsDelegates: const [
+                  AppLocalizations.delegate,
                   GlobalMaterialLocalizations.delegate,
                   GlobalWidgetsLocalizations.delegate,
                   GlobalCupertinoLocalizations.delegate,

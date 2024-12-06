@@ -1,0 +1,10 @@
+{
+  "appTitle": "오버패스트",
+  "heroes": "영웅",
+  "gamemodes": "게임모드",
+  "maps": "전장",
+  "players": "플레이어",
+  "role": "역할",
+  "error": "오류: {message}",
+  "noHeroesFound": "영웅을 찾을 수 없습니다"
+}

@@ -1,0 +1,17 @@
+{
+  "appTitle": "OverFast",
+  "heroes": "Heroes",
+  "gamemodes": "Gamemodes",
+  "maps": "Maps",
+  "players": "Players",
+  "role": "Role",
+  "error": "Error: {message}",
+  "noHeroesFound": "No heroes found",
+  "@error": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  }
+}
