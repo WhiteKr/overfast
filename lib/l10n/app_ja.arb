@@ -1,0 +1,10 @@
+{
+  "appTitle": "オーバーファスト",
+  "heroes": "ヒーロー",
+  "gamemodes": "ゲームモード",
+  "maps": "マップ",
+  "players": "プレイヤー",
+  "role": "ロール",
+  "error": "エラー: {message}",
+  "noHeroesFound": "ヒーローが見つかりません"
+}
