@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../bloc/heroes_bloc.dart';
 import '../data/heroes_repository.dart';
+import '../model/hero.dart' as hero_model;
+import 'widgets/hero_item.dart';
 
 class HeroesScreen extends StatelessWidget {
   const HeroesScreen({super.key});
@@ -23,17 +25,8 @@ class HeroesScreen extends StatelessWidget {
             return ListView.builder(
               itemCount: state.heroes.length,
               itemBuilder: (context, index) {
-                final hero = state.heroes[index];
-                return ListTile(
-                  leading: Image.network(
-                    hero.portrait,
-                    width: 50,
-                    height: 50,
-                    fit: BoxFit.cover,
-                  ),
-                  title: Text(hero.name),
-                  subtitle: Text('Role: ${hero.role.name}'),
-                );
+                final hero_model.Hero hero = state.heroes[index];
+                return HeroItem(hero: hero);
               },
             );
           }
